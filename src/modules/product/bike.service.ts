@@ -6,10 +6,10 @@ const createBikeItem = async (bikeData: TBike) => {
   return result;
 };
 
-const getAllBikes = async()=>{
-    const result = await Bike.find();
-    return result;
-}
+const getAllBikes = async (query: object) => {
+  const result = await Bike.find(query).select("-__v");
+  return result;
+};
 
 export const bikeServices = {
   createBikeItem,

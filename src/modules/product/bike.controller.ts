@@ -26,7 +26,19 @@ const createBikeItem = async (req: Request, res: Response) => {
 };
 const getAllBikes = async (req: Request, res: Response) => {
   try {
-    const result = await bikeServices.getAllBikes();
+    const queryData = req.query.searchTerm as string | undefined;
+    let query = {};
+    if (queryData) {
+      query = {
+        $or: [
+          { name: { $regex: queryData, $options: 'i' } },
+          { brand: { $regex: queryData, $options: 'i' } },
+          { category: { $regex: queryData, $options: 'i' } },
+        ],
+      };
+    }
+    console.log(queryData);
+    const result = await bikeServices.getAllBikes(query);
     res.status(200).json({
       status: true,
       message: 'Bikes Retrieved successfully',
