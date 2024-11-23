@@ -57,11 +57,50 @@ const getAllBikes = async (req: Request, res: Response) => {
 const getSingleBike = async (req: Request, res: Response) => {
   try {
     const { id } = req.params;
-    const result = await bikeServices.getSingleBikes(id);
+    const result = await bikeServices.getSingleBike(id);
     res.status(200).json({
       status: true,
       message: 'Bike Retrieved successfully',
       data: result,
+    });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (err: any) {
+    res.status(500).json({
+      success: false,
+      message: err.message || 'Something went wrong',
+      error: err,
+      stack: config.node_env == 'development' ? err.stack : undefined,
+    });
+  }
+};
+const updateBike = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const updatedData = req.body;
+    const result = await bikeServices.updateBike(id, updatedData);
+    res.status(200).json({
+      status: true,
+      message: 'Bike updated successfully',
+      data: result,
+    });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (err: any) {
+    res.status(500).json({
+      success: false,
+      message: err.message || 'Something went wrong',
+      error: err,
+      stack: config.node_env == 'development' ? err.stack : undefined,
+    });
+  }
+};
+const deleteBike = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    await bikeServices.deleteBike(id);
+    res.status(200).json({
+      status: true,
+      message: 'Bike deleted successfully',
+      data: {},
     });
     // eslint-disable-next-line @typescript-eslint/no-explicit-any
   } catch (err: any) {
@@ -78,4 +117,6 @@ export const BikeController = {
   createBikeItem,
   getAllBikes,
   getSingleBike,
+  updateBike,
+  deleteBike,
 };
