@@ -54,8 +54,28 @@ const getAllBikes = async (req: Request, res: Response) => {
     });
   }
 };
+const getSingleBike = async (req: Request, res: Response) => {
+  try {
+    const { id } = req.params;
+    const result = await bikeServices.getSingleBikes(id);
+    res.status(200).json({
+      status: true,
+      message: 'Bike Retrieved successfully',
+      data: result,
+    });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (err: any) {
+    res.status(500).json({
+      success: false,
+      message: err.message || 'Something went wrong',
+      error: err,
+      stack: config.node_env == 'development' ? err.stack : undefined,
+    });
+  }
+};
 
 export const BikeController = {
   createBikeItem,
   getAllBikes,
+  getSingleBike,
 };
