@@ -1,5 +1,5 @@
 # Project Name : Bike Store
-# Backend Link : [Link](https://bike-store-backend-flax.vercel.app/)
+# Api Link : [Link](https://bike-store-backend-flax.vercel.app/)
 
 This project is the server for a Bike Store application, built using TypeScript and Node.js. It integrates with MongoDB via Mongoose to handle database operations while ensuring data integrity with schema validation.
 
@@ -31,8 +31,8 @@ This project is the server for a Bike Store application, built using TypeScript 
 1. Order a Bike: POST- /api/orders
 2. Calculate Revenue: GET- /api/orders/revenue
 
-Author
-Mosharof Hossen
+Author \n
+Mosharof Hossen \n
 [GitHub Profile](https://github.com/Mosharof-Hossen)
 
 
