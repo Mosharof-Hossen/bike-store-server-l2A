@@ -37,7 +37,7 @@ const getAllBikes = async (req: Request, res: Response) => {
         ],
       };
     }
-    console.log(queryData);
+    // console.log(queryData);
     const result = await bikeServices.getAllBikes(query);
     res.status(200).json({
       status: true,
