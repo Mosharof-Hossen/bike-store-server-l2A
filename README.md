@@ -31,6 +31,30 @@ This project is the server for a Bike Store application, built using TypeScript 
 1. Order a Bike: POST- /api/orders
 2. Calculate Revenue: GET- /api/orders/revenue
 
+### Project setup guideline
+Step 1: Clone the Repository
+``` git
+git clone https://github.com/Mosharof-Hossen/bike-store-server-l2A.git
+cd bike-store-server-l2A
+```
+Step 2: Install Dependencies
+``` javascript
+npm install
+```
+Step 3: Set Up Environment Variables
+``` javascript
+MONGO_URI=mongodb://......./bikes-tore
+PORT=4000
+```
+Step 4: Compile TypeScript Code
+```javascript
+npm run build
+```
+Step 5: Start the Server
+```javascript
+npm run start:dev
+```
+
 Author <br>
 Mosharof Hossen <br>
 [GitHub Profile](https://github.com/Mosharof-Hossen)
