@@ -31,7 +31,9 @@ This project is the server for a Bike Store application, built using TypeScript 
 1. Order a Bike: POST- /api/orders
 2. Calculate Revenue: GET- /api/orders/revenue
 
-
+Author
+Mosharof Hossen
+[GitHub Profile](https://github.com/Mosharof-Hossen)
 
 
 
