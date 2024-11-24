@@ -10,45 +10,30 @@ This project is the server for a Bike Store application, built using TypeScript 
    3. Fetch information about a specific bike by ID.
    4. Update the details of a bike.
    5. Delete a bike from the inventory.
+2. Order Management:
+   1. Place an order for a bike.
+   2. Calculate total revenue generated from all orders using aggregation pipelines.
+
+## Tech Stack
+1. Programming Language: TypeScript
+2. Database: MongoDB
+3. ODM (Object Data Modeling): Mongoose
+4. Runtime Environment: Node.js
+
+## API Endpoints
+### Bike Management
+1. Create a Bike: POST- /api/products
+2. Get All Bikes: GET- /api/products
+3. Get a Specific Bike: GET- /api/products/:productId
+4. Update a Bike: PUT- /api/products/:productId
+5. Delete a Bike: DELETE - /api/products/:productId
+### Order Management
+1. Order a Bike: POST- /api/orders
+2. Calculate Revenue: GET- /api/orders/revenue
 
 
 
 
 
-
-## Tools: 
-1.React Js.
-
-2.Tailwind CSS.
-
-3.MongoDB.
-
-4.Responsive.
-
-5.DaisyUI.
-
-6.Firebase Authentication.
-
-7.React Icons.
-
-8.Font Awesome icon.
-
-## Home Page
-![home](https://github.com/user-attachments/assets/92e97b16-d044-4478-b2ae-32a0211351e1)
-
-## Our Menu page
-![our menu](https://github.com/user-attachments/assets/1dd15187-cc3f-4528-a48c-c9cd9845c12f)
-
-## Our Shop Page
-![our shop](https://github.com/user-attachments/assets/f6bb83d8-e908-48e5-8da0-f9805e7133e3)
-
-## Admin dashboard
-![admin dashboad](https://github.com/user-attachments/assets/52d244ac-12a8-47f7-b0dd-3ea273b47cc3)
-
-## User Dashboard
-![user deshboard](https://github.com/user-attachments/assets/5a552685-b357-40d1-81ef-a9b1a58d63d9)
-
-## Login Page
-![login form](https://github.com/user-attachments/assets/8f0da367-793b-42e2-a501-2b9ef2d9103a)
 
 
