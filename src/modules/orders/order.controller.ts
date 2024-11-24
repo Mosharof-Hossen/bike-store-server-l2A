@@ -4,6 +4,7 @@ import { bikeServices } from '../product/bike.service';
 import { orderServices } from './order.service';
 // import { TOrder } from './order.interface';
 
+// eslint-disable-next-line @typescript-eslint/no-explicit-any
 const createOrder = async (req: Request, res: Response): Promise<any> => {
   try {
     const { email, product, quantity, totalPrice } = req.body;
@@ -37,9 +38,9 @@ const createOrder = async (req: Request, res: Response): Promise<any> => {
       totalPrice,
     });
 
-     res.status(200).json({
+    res.status(200).json({
       status: true,
-      message: "Order created successfully",
+      message: 'Order created successfully',
       data: order,
     });
 
@@ -54,6 +55,26 @@ const createOrder = async (req: Request, res: Response): Promise<any> => {
   }
 };
 
+const findRevenue = async (req: Request, res: Response) => {
+  try {
+    const result = await orderServices.totalRevenue();
+    res.status(200).json({
+      status: true,
+      message: 'Revenue calculated successfully',
+      data: result,
+    });
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  } catch (err: any) {
+    res.status(404).json({
+      success: false,
+      message: 'Failed to place order',
+      error: err,
+      stack: config.node_env == 'development' ? err.stack : undefined,
+    });
+  }
+};
+
 export const OrderController = {
   createOrder,
+  findRevenue,
 };
